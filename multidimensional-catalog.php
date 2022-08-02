@@ -26,30 +26,15 @@ $product = [
 ];
 ?>
 
+<?php    foreach($product as $key => $value){  ?>
 <div>
-    <h3> Nom du produit : <?= $product["iPhone"]["name"]?>            </h3>
+    <h3> Nom du produit : <?= $value ["name"]?>            </h3>
 
-    <img src="         <?= $product ["iPhone"]["picture_url"] ?>    " width="250px" height="250"     >
+    <img src="         <?= $value ["picture_url"] ?>    " width="250px" height="250"     >
 
-    <p>prix du produit <?=$product["iPhone"]["price"] . " €"?>         </p>
+    <p>prix du produit <?=$value ["price"] . " €"?>         </p>
 </div>
 
-
-<div>
-    <h3> Nom du produit : <?= $product["iPad"]["name"]?>              </h3>
-
-    <img src="            <?= $product["iPad"]["picture_url"] ?>    " width="250px" height="250"     >
-
-    <p>prix du produit    <?=$product["iPad"]["price"] . " €"?>         </p>
-</div>
-
-
-<div>
-    <h3> Nom du produit :   <?= $product["iMac"]["name"]?>             </h3>
-
-    <img src="              <?= $product["iMac"]["picture_url"] ?>    " width="250px" height="250"     >
-
-    <p>prix du produit      <?=$product["iMac"]["price"] . " €"?>       </p>
-</div>
+<?php }; ?>
 
 
