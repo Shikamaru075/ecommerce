@@ -1,4 +1,7 @@
 <?php
+
+require_once "my-functions.php";
+
 $iphone = [
     "name" => "iPhone",
     "price" => 750,
@@ -30,7 +33,10 @@ $imac = [
 
     <img src="         <?= $iphone["picture_url"] ?>    " width="250px" height="250"     >
 
-    <p>prix du produit <?=$iphone["price"] . " €"?>         </p>
+    <p>prix du produit <?= formatPrice($iphone ["price"])?>         </p>
+
+    <p>Hors taxe :  <?= formatPrice (calculeHT($iphone ["price"])) ?>  </p>
+
 </div>
 
 
@@ -39,7 +45,9 @@ $imac = [
 
     <img src="            <?= $ipad["picture_url"] ?>    " width="250px" height="250"     >
 
-    <p>prix du produit    <?=$ipad["price"] . " €"?>         </p>
+    <p>prix du produit    <?=formatPrice($ipad ["price"])?>         </p>
+
+    <p>Hors taxe :  <?= formatPrice (calculeHT($ipad ["price"])) ?>  </p>
 </div>
 
 
@@ -48,7 +56,9 @@ $imac = [
 
     <img src="              <?= $imac["picture_url"] ?>    " width="250px" height="250"     >
 
-    <p>prix du produit      <?=$imac["price"] . " €"?>       </p>
+    <p>prix du produit      <?=formatPrice($imac ["price"])?>       </p>
+
+    <p>Hors taxe :  <?= formatPrice (calculeHT($imac ["price"])) ?>  </p>
 </div>
 
 

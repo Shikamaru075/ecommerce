@@ -14,8 +14,10 @@
 
     <?php
     require('header.php');
-    require('item.php');
+    require('multidimensional-catalog.php');
+    require ("catalog-with-keys.php");
     require('footer.php');
+    require('my-functions.php');
     ?>
 
 </div>
