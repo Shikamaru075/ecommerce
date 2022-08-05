@@ -1,45 +1,26 @@
 <?php
 require_once "my-functions.php";
-$product = [
-    "iPhone" =>[
-        "name" => "iPhone",
-        "price" => 75000,
-        "weight" => 200,
-        "discount" => 10,
-        "picture_url" => "img/iphone.jpeg"],
+require "product.php";
 
-    "iPad" => [
-        "name" => "iPad",
-        "price" => 90000,
-        "weight" => 200,
-        "discount" => 10,
-        "picture_url" => "img/ipad.jpeg"],
-
-    "iMac" => [
-        "name" => "iMac",
-        "price" => 155000,
-        "weight" => 200,
-        "discount" => 10,
-        "picture_url" => "img/imac.jpeg"],
-
-
-];
-?>
-
-<?php    foreach($product as $key => $value){  ?>
+  foreach($product as $key => $value){  ?>
 <div>
     <h3> Nom du produit : <?= $value ["name"]?>            </h3>
 
     <img src="         <?= $value ["picture_url"] ?>    " width="250px" height="250"     >
 
-    <p>prix du produit :  <?= formatPrice($value ["price"]) ?>  </p>
+    <p>prix du produit :  <?php formatPrice($value ["price"]) ?>  </p>
 
-    <p>Hors taxe :  <?= formatPrice (calculeHT($value ["price"])) ?>  </p>
+    <p>Hors taxe :  <?php formatPrice (calculeHT($value ["price"])) ?>  </p>
 
-    <p>Réduction : <?= formatPrice(discountedPrice  ($value ["price"] , $value ["discount"])) ?>  </p>
-
+    <p>Réduction : <?php formatPrice(discountedPrice  ($value ["price"] , $value ["discount"])) ?>  </p>
 </div>
 
-<?php }; ?>
+    <form action="cart.php" method="post">
+        <p>Quantité : <input type="number" name="quantity" min="1" max="10"/></p>
+        <input type="hidden" name="productName" value="<?= $value["name"] ?> " >
+        <input type="hidden" name="price" value="<?= $value["price"] ?> " >
+        <button type="submit">Ajouter au panier</button>
 
+    </form>
+<?php }; ?>
 

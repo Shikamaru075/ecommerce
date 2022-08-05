@@ -10,8 +10,11 @@ function calculeHT (int $priceTTC, int $TVA=20) :int{
 }
 
 function discountedPrice (int $price,$discount): int  {
-    return ($price-$price*$discount/100);
+    return $price-$price*$discount/100;
+}
+
+function total ( int $price,$quantity) : int {
+    return  $price*$quantity;
 
 
 }
-
